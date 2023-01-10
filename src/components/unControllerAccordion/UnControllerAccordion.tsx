@@ -7,6 +7,7 @@ type AccordionPropsType ={
 
 type AccordionTitlePropsType ={
     value: string
+    onClick: ()=>void
 }
 export function UnControllerAccordion(props: AccordionPropsType) {
 
@@ -16,8 +17,8 @@ export function UnControllerAccordion(props: AccordionPropsType) {
 
         return (
             <div>
-                <AccordionTitle value={props.titleValue }/>
-                <button onClick={()=>{setCollapsed(!collapsed)}}>toggle</button>
+                <AccordionTitle value={props.titleValue } onClick = {()=>{setCollapsed(!collapsed)}}/>
+
                 {collapsed===false && <AccordionBody/>}
 
             </div>
@@ -27,7 +28,7 @@ export function UnControllerAccordion(props: AccordionPropsType) {
 
 function AccordionTitle(props: AccordionTitlePropsType){
     return(
-        <h3>
+        <h3 onClick={props.onClick}>
             {props.value}
         </h3>
     )
