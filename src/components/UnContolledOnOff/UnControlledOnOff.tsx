@@ -3,14 +3,13 @@ import s from "./OnOff.module.css"
 
 
 type PropsType = {
-    switchOnOff: boolean
-    onChange: (switchOnOff: boolean)=> void
+    // switchOnOff: boolean
 }
 
 
-export function OnOff(props: PropsType ){
+export function UnControlledOnOff(props: PropsType ){
 
-
+    let [switchOnOff, setSwitchOnOff] = useState(false)
 
     const onStyle ={
         width: "30px",
@@ -18,7 +17,7 @@ export function OnOff(props: PropsType ){
         border: "1px solid black",
         display: "inline-block",
         padding: "5px",
-        backgroundColor: props.switchOnOff === true ? "green" : "white"
+        backgroundColor: switchOnOff === true ? "green" : "white"
     }
     const offStyle ={
         width: "30px",
@@ -27,7 +26,7 @@ export function OnOff(props: PropsType ){
         display: "inline-block",
         padding: "5px",
         marginLeft: "2px",
-        backgroundColor: props.switchOnOff === false ? "red" : "white"
+        backgroundColor: switchOnOff === false ? "red" : "white"
     }
     const indicatorStyle={
         width: "10px",
@@ -36,13 +35,13 @@ export function OnOff(props: PropsType ){
         border: "1px solid black",
         display: "inline-block",
         marginLeft: "5px",
-        backgroundColor: props.switchOnOff === false ? "red" : "green"
+        backgroundColor: switchOnOff === false ? "red" : "green"
     }
 
     return(
         <div>
-            <div style={onStyle} onClick={()=>{props.onChange(true)}}>on</div>
-            <div style={offStyle} onClick={()=>{props.onChange(false)}}>off</div>
+            <div style={onStyle} onClick={()=>{setSwitchOnOff(true)}}>on</div>
+            <div style={offStyle} onClick={()=>{setSwitchOnOff(false)}}>off</div>
             <div style={indicatorStyle}></div>
         </div>
     )
