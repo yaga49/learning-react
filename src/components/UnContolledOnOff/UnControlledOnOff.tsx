@@ -3,13 +3,15 @@ import s from "./OnOff.module.css"
 
 
 type PropsType = {
+
     // switchOnOff: boolean
+    defaultSwitch?: boolean
 }
 
 
 export function UnControlledOnOff(props: PropsType ){
 
-    let [switchOnOff, setSwitchOnOff] = useState(false)
+    let [switchOnOff, setSwitchOnOff] = useState(props.defaultSwitch? props.defaultSwitch: false)
 
     const onStyle ={
         width: "30px",

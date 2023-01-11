@@ -35,6 +35,6 @@ export function UnControlledRating(props: RatingPropsType) {
 function Star(props: StarPropsType) {
 
     return <span onClick={()=>{props.setValue(props.value)}}>
-        {props.selected? <b>star</b>: "star"}
+        {props.selected? <b>star </b>: "star "}
     </span>
 }
