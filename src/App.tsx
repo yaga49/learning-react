@@ -19,13 +19,13 @@ function App() {
             {/*<Rating value = {ratingValue} onClick={setRatingValue}/>*/}
             {/*  <UnControlledRating/>*/}
             {/*  <UnControlledRating/>*/}
-            <Accordion titleValue={"menu"} collapsed={accordionCollapsed}
-                       onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
+            {/*<Accordion titleValue={"menu"} collapsed={accordionCollapsed}*/}
+            {/*           onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>*/}
             {/*<Accordion titleValue = {"users"} collapsed = {true}/>*/}
             {/*<UncuntrolledOnOff />*/}
             {/*  <UnControllerAccordion titleValue={"users"}/>*/}
-            {/*  <UnControllerAccordion titleValue={"menu"}/>*/}
-            <OnOff switchOnOff={switchOnOff} onChange={(switchOnOff)=>{setSwitchOnOff(switchOnOff)}}/>
+    {/*  <UnControllerAccordion titleValue={"menu"}/>*/}
+    {/*        <OnOff switchOnOff={switchOnOff} onChange={(switchOnOff)=>{setSwitchOnOff(switchOnOff)}}/>*/}
         </div>
     );
 }
