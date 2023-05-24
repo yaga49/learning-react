@@ -33,18 +33,18 @@ export const Example1 = () => {
 
 
 export const Example2 = () => {
-    const [count, setCount] = useState(0)
+    const [time, setTime] = useState(new Date());
 
-    useEffect(()=>{
-        setInterval(()=>{
-            setCount(state => state + 1)
-        },1000)
-    }, [])
+    // Обновляем время каждую секунду
+    useEffect(() => {
+        const timerID = setInterval(() => setTime(new Date()), 1000);
 
-    return (
-        <>
-            count: {count}
-        </>
-    )
+        // Очищаем таймер при удалении компонента
+        return () => clearInterval(timerID);
+    }, []);
+
+    // Форматируем время в строку и выводим на экран
+    const formattedTime = time.toLocaleTimeString();
+    return <p>Текущее время: {formattedTime}</p>;
 }
 
